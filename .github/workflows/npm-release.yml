@@ -41,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: package
-          path: "aaronpowell*.tgz"
+          path: "ythrinathareddy*.tgz"
       - run: echo "tag=${GITHUB_REF##*/v}" >> $GITHUB_ENV
       - name: Upload package to release
         uses: actions/upload-release-asset@v1
@@ -111,8 +111,8 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: https://npm.pkg.github.com/
-          scope: "@aaronpowell"
-      - run: echo "registry=https://npm.pkg.github.com/@aaronpowell" >> .npmrc
+          scope: "@ythrinathareddy"
+      - run: echo "registry=https://npm.pkg.github.com/@ythrinathareddy" >> .npmrc
       - run: npm publish $(ls *.tgz) --access public
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.GITUSER_TOKEN}}
