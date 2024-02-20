@@ -49,13 +49,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: package
-          path: "aaronpowell*.tgz"
+          path: "ythrinathareddy*.tgz"
 
   publish:
     name: "Publish to GitHub Packages"
     needs: [package]
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'aaronpowell' # && github.token != ''
+    if: github.repository_owner == 'ythrinathareddy' # && github.token != ''
     steps:
       - name: Upload
         uses: actions/download-artifact@v4
@@ -65,8 +65,8 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: https://npm.pkg.github.com/
-          scope: "@aaronpowell"
-      - run: echo "registry=https://npm.pkg.github.com/@aaronpowell" >> .npmrc
+          scope: "@ythrinathareddy"
+      - run: echo "registry=https://npm.pkg.github.com/@ythrinathareddy" >> .npmrc
       - run: npm publish $(ls *.tgz)
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.GITUSER_TOKEN}}
