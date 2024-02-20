@@ -68,6 +68,6 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: "@ythrinathareddy"
       - run: echo "registry=https://npm.pkg.github.com/@ythrinathareddy" >> .npmrc
-      - run: npm publish $(ls *.zip)
+      - run: npm publish package.zip  # $(ls *.zip)
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITUSER_TOKEN}}
