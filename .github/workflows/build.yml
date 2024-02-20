@@ -49,8 +49,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: package
-          path: /home/runner/work/react/"ythrinathareddy*.tgz"
-          #path: "ythrinathareddy*.tgz"
+          path: "ythrinathareddy/*.tgz"
+          #path: "/home/runner/work/react/ythrinathareddy*.tgz"
 
   publish:
     name: "Publish to GitHub Packages"
